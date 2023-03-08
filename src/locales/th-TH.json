@@ -1,0 +1,16 @@
+{
+  "After the submission, the json will copy to the clipboard and finally sent it to the frontend": "หลังจากส่งแล้ว json จะคัดลอกไปยังคลิปบอร์ดและส่งไปยังส่วนหน้าในที่สุด",
+  "Back": "กลับ",
+  "Paste the translation json": "วางการแปล json",
+  "Please translate all content and click Submit.": "กรุณาแปลเนื้อหาทั้งหมดแล้วคลิกส่ง",
+  "Submit": "ส่ง",
+  "Submit to translate": "ส่งเพื่อแปล",
+  "Translate success!! Copied to clipboard": "แปลสำเร็จ!! คัดลอกไปที่คลิปบอร์ดแล้ว",
+  "compare": "เปรียบเทียบ",
+  "different json": "json ที่แตกต่างกัน",
+  "language": "ภาษา",
+  "new json": "json ใหม่",
+  "old json": "json เก่า",
+  "translate": "แปลภาษา",
+  "type the translation": "พิมพ์คำแปล"
+}
