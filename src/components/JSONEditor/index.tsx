@@ -21,12 +21,10 @@ export default function (props: JSONEditorProps) {
       props: {
         mode: Mode.text,
         mainMenuBar: false,
-        onChange: (
-          updatedContent,
-          previousContent,
-          { contentErrors, patchResult },
-        ) => {
-          onChange ? onChange(updatedContent.text, contentErrors) : null;
+        onChange: (updatedContent, previousContent, { contentErrors }) => {
+          if (onChange) {
+            onChange(updatedContent.text, contentErrors);
+          }
         },
       },
     });
@@ -51,5 +49,5 @@ export default function (props: JSONEditorProps) {
     }
   }, [value]);
 
-  return <div className={styles.content} ref={refContainer}></div>;
+  return <div className={styles.content} ref={refContainer} />;
 }

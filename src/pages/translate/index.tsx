@@ -1,6 +1,6 @@
 import TranslationInput from './components/TranslationInput';
 import TranslationForm from './components/TranslationForm';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './index.less';
 import type { FC } from 'react';
 

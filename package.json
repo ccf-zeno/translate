@@ -8,6 +8,7 @@
     "setup": "max setup",
     "start": "npm run dev",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "eslint": "eslint ./src --fix",
     "extract:en": "formatjs extract 'src/**/*.ts*' --out-file src/locales/en-US.json --format src/locales/formatter.js",
     "extract:th": "locale=th-TH formatjs extract 'src/**/*.ts*' --out-file src/locales/th-TH.json --format src/locales/compile.js",
     "extract": "yarn extract:en && yarn extract:th"
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@umijs/fabric": "^2.14.1",
     "@umijs/lint": "^4.0.56",
     "@umijs/max": "^4.0.55",
     "eslint": "^8.35.0",
@@ -33,8 +35,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,less}": [
-      "umi lint"
+    "src/**/*.{js,tsx}": [
+      "eslint ./src --fix"
     ],
     "src/**/*.{js,tsx,less,md,json}": [
       "prettier --write"
