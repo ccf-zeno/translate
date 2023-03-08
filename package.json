@@ -7,42 +7,39 @@
     "postinstall": "max setup",
     "setup": "max setup",
     "start": "npm run dev",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "eslint": "eslint ./src --fix",
+    "lint": "max lint --eslint-only --fix",
     "extract:en": "formatjs extract 'src/**/*.ts*' --out-file src/locales/en-US.json --format src/locales/formatter.js",
     "extract:th": "locale=th-TH formatjs extract 'src/**/*.ts*' --out-file src/locales/th-TH.json --format src/locales/compile.js",
-    "extract": "yarn extract:en && yarn extract:th"
+    "extract": "yarn extract:en && yarn extract:th",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@formatjs/cli": "^6.0.4",
     "antd": "^5.2.3",
     "copy-to-clipboard": "^3.3.3",
+    "react": "^18.2.0",
     "vanilla-jsoneditor": "^0.15.1"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@umijs/fabric": "^2.14.1",
     "@umijs/lint": "^4.0.56",
     "@umijs/max": "^4.0.55",
     "eslint": "^8.35.0",
+    "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
     "prettier": "^2.6.2",
-    "typescript": "^4.1.2"
+    "typescript": "^4.9.5"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,tsx}": [
-      "eslint ./src --fix"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "max lint"
     ],
-    "src/**/*.{js,tsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "src/**/*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
+    "src/**/*": "prettier --write --ignore-unknown"
   }
 }

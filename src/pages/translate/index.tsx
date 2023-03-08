@@ -1,8 +1,9 @@
-import TranslationInput from './components/TranslationInput';
-import TranslationForm from './components/TranslationForm';
 import { useState } from 'react';
-import styles from './index.less';
 import type { FC } from 'react';
+
+import TranslationForm from './components/TranslationForm';
+import TranslationInput from './components/TranslationInput';
+import styles from './index.less';
 
 const Translate: FC = () => {
   const [page, setPage] = useState(1);
