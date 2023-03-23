@@ -6,6 +6,9 @@
 /src/.umi-production
 /src/.umi-test
 /dist
+
 .swc
 .history
+.DS_Store
+
 dist.zip
