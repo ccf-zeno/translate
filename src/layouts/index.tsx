@@ -12,6 +12,7 @@ export default () => {
   const [key, setKey] = useState(history.location.pathname);
 
   useEffect(() => {
+    setKey(history.location.pathname);
     history.listen((h: any) => {
       setKey(h.location.pathname);
     });
